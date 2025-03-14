@@ -12,12 +12,12 @@ void key_init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIOMode_TypeDef GPIO_Mode
 	GPIO_Init(GPIOx, &gpio_init);
 }
 
-uint8_t key_get_bit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+uint8_t key_get_bit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, int result)
 {
-	if (GPIO_ReadInputDataBit(GPIOx, GPIO_Pin) == 1)
+	if (GPIO_ReadInputDataBit(GPIOx, GPIO_Pin) == result)
 	{
 		Delay_ms(20);
-		while(GPIO_ReadInputDataBit(GPIOx, GPIO_Pin) == 1);
+		while(GPIO_ReadInputDataBit(GPIOx, GPIO_Pin) == result);
 		Delay_ms(20);
 		return 1;
 	}
