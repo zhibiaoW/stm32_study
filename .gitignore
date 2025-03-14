@@ -397,4 +397,13 @@ FodyWeavers.xsd
 *.msp
 
 # JetBrains Rider
-*.sln.iml
+*.sln.im
+
+# user_defined
+LED/Objects/*.crf
+LED/Objects/*.o
+LED/Objects/*.dep
+LED/Objects/*.htm
+LED/Objects/*.axf
+LED/Listings/*.map
+.vscode/
